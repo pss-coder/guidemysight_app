@@ -1,115 +1,188 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      title: 'Named Routes Navigation',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MainNavigationPage(),
+        '/assistanceinstruction': (context) => const AssistanceInstructions(),
+        '/volunteerinstruction': (context) => const VolunteerInstructions(),
+        '/mapsearch': (context) => const MapsSearch(),
+        '/volunteerhelprequest': (context) => const VolunteerHelpRequest(),
+        '/volunteerhelpconfirm': (context) => const VolunteerHelpConfirmation(),
+        '/confirmcall': (context) => const ConfirmAssistanceCall(),
+
+      },
+    )
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class MainNavigationPage extends StatelessWidget {
+  const MainNavigationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        // title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/assistanceinstruction');
+              }, 
+              child: Text("Virtual Assistance"),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/volunteerinstruction');
+              }, 
+              child: Text("Volunteer"),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class AssistanceInstructions extends StatelessWidget {
+  const AssistanceInstructions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text("Before you begin..."),
+            const Text("If you need help, for example, finding your way to the clinic, you can click on the ‘Call for Help’ button below. "),
+            const Text("Before the volunteer attends to you, do key in your current location and the place you wish to go to."),
+            const Text("A volunteer will attend to you within 5 minutes where they will guide you to where you want to go."),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/mapsearch');
+              },
+              child: Text("Ok, understood!"),
+            ),
+          ],
+        ),
+    );
+  }
+}
+
+class VolunteerInstructions extends StatelessWidget {
+  const VolunteerInstructions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text("Before you begin..."),
+            const Text("Do ensure that your video and audio are working properly before attending to the person."),
+            const Text("Do use the map in the app to help the person navigate their way to their intended location."),
+            const Text("Please be mindful of your language when interacting with persons-with-disabilities."),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/mapsearch');
+              },
+              child: Text("Ok, understood!"),
+            ),
+          ],
+        ),
+    );
+  }
+}
+
+class MapsSearch extends StatelessWidget {
+  const MapsSearch({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                print("Search");
+              },
+              child: Text("Search"),
+            ),
+          ],
+        ),
+    );
+  }
+}
+
+class VolunteerHelpRequest extends StatelessWidget {
+  const VolunteerHelpRequest({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text("A person needs help now, will you be able to help?"),
+            ElevatedButton(
+              onPressed: () {
+                print("Search");
+              },
+              child: Text("Yes"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+              child: Text("No"),
+            ),
+          ],
+        ),
+    );
+  }
+}
+
+class VolunteerHelpConfirmation extends StatelessWidget {
+  const VolunteerHelpConfirmation({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("The person you are helping is name"), //fix the name
+            Text("The location they are going to is here"), //fix the location
+          ],
+        ),
+    );
+  }
+}
+
+class ConfirmAssistanceCall extends StatelessWidget {
+  const ConfirmAssistanceCall({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                print("calling");
+              }, 
+              child: Text("Call first available volunteer")),
+          ],
+        ),
     );
   }
 }
