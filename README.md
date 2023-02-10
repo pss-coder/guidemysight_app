@@ -1,7 +1,5 @@
 # Guide My Sight App
 
-A new Flutter project.
-
 ## Getting Started
 
 A few resources to get you started if this is your first Flutter project:
@@ -28,6 +26,11 @@ Solution allows a visual impaired user to enter location (Google Map API) destin
 
 ## Figma Design
 https://www.figma.com/file/dclntmdY0IKaSPuGykt7uE/GuideMySight-Prototype?node-id=0%3A1
+
+## Screens
+Intended Landing Page             |  Virtual Assistance - Call for Help (Location Provider)
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/22881285/218201737-c5c393c4-1dd5-4af2-9214-6880c66f1e52.png "Intended Landing Page")  |  ![](https://user-images.githubusercontent.com/22881285/218201811-0bdf1b73-32fe-46a1-9118-c2a6a3c88e87.png "Call for Help")
 
 ### Credits
 To the amazing team (Amanda, Darice and Pawandeep) for making a positive contribution to Singapore's visually impaired community.
