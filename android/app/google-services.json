@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "736504887450",
+    "project_id": "fir-rtc-32012",
+    "storage_bucket": "fir-rtc-32012.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736504887450:android:f1d93dc2f81f8cf66f4723",
+        "android_client_info": {
+          "package_name": "com.example.guidemysight_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736504887450-ep6dthq8klglpa08oim0ep4kg5k3tb5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqn6O_CWqYnf_ZNIS8iOr0T4mFtP_LCzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736504887450-ep6dthq8klglpa08oim0ep4kg5k3tb5l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "736504887450-v8f54vjorc09l2d02t5lfi09cj1uuf8l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.guidemysightApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
